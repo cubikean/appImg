@@ -4,7 +4,7 @@ from tkinter import ttk
 from tkinter import messagebox
 import os
 
-from compress_image_v2 import collect_img, compress_img
+from util import collect_img, compress_img
 
 def img_folder():
     img_folder_entry.delete(0,'end')
