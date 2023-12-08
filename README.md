@@ -38,13 +38,13 @@ This Python script provides a simple GUI application for compressing images in b
 
 ### Dependencies
 
-This script depends on the `compress_image_v2` module, which includes functions for collecting and compressing images. Ensure that the `compress_image_v2` module is available in the same directory as the script.
+This script depends on the `util` module, which includes functions for collecting and compressing images. Ensure that the `util` module is available in the same directory as the script.
 
 ### Example
 
 ```python
 # Example usage
-from compress_image_v2 import collect_img, compress_img
+from util import collect_img, compress_img
 
 # Define image folder, result folder, and compression options
 img_folder = "/path/to/input/images"
