@@ -26,7 +26,7 @@ This Python script provides a simple GUI application for compressing images in b
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/appImg.git
+    git clone https://github.com/cubikean/appImg.git
     cd appImg
     ```
 
