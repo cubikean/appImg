@@ -94,11 +94,3 @@ def compress_img(images, destination, new_size_ratio=0.9, quality=75, width=None
         saving_diff = new_image_size - image_size
         # print the saving percentage
         print(f"[+] Image size change: {saving_diff/image_size*100:.2f}% of the original image size.")
-        
-    
-    
-if __name__ == "__main__":
-    
-    IMG = collect_img('/Users/aloisgoeury/Downloads/skinclinic')
-    #print(compress_img(IMG,'/Users/aloisgoeury/Desktop/Result'))
-    print(IMG)
