@@ -33,7 +33,7 @@ This Python script provides a simple GUI application for compressing images in b
 2. Run the script:
 
     ```bash
-    python image_compressor.py
+    python appImg.py
     ```
 
 ### Dependencies
