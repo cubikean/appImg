@@ -57,3 +57,10 @@ quality = 75
 
 # Collect and compress images
 compress_img(images=collect_img(img_folder), destination=result_folder, new_size_ratio=ratio, quality=quality, to_jpg=jpg, to_webp=webp, to_png=png)
+```
+
+### Acknowledgments
+
+Special thanks to [Alois Goeury](https://github.com/AloisGoeury) for his invaluable assistance and guidance in the development of this project.
+Feel free to contribute, report issues, or suggest improvements!
+
