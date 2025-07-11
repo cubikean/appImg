@@ -42,7 +42,7 @@ This script depends on the `util` module, which includes functions for collectin
 
 ### Acknowledgments
 
-Special thanks to @AloisGoeury for his valuable help on this project!
+Special thanks to [Alois Goeury](https://github.com/AloisGoeury) for his valuable help on this project!
 
 
 
