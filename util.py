@@ -29,26 +29,27 @@ def collect_img(folder):
         images.remove(image)
     return images
 
-def compress_img(images, destination, new_size_ratio=0.9, quality=75, width=None, height=None, to_jpg=False, to_webp=True, to_png=False):
-
+def compress_img(images, destination, new_size_ratio=0.9, quality=75, width=None, height=None, uniformize=False, to_jpg=False, to_webp=True, to_png=False):
+    from PIL import ImageOps
     for image_name in images:
-        # load the image to memory
         img = Image.open(image_name)
-        # print the original image shape
+        # Corrige l'orientation selon l'EXIF
+        img = ImageOps.exif_transpose(img)
         print("[*] Image shape:", img.size)
-        # get the original image size in bytes
         image_size = os.path.getsize(image_name)
-        # print the size before compression/resizing
         print("[*] Size before compression:", get_size_format(image_size))
-        if new_size_ratio < 1.0:
-            # if resizing ratio is below 1.0, then multiply width & height with this ratio to reduce image size
+        if uniformize and width and height:
+            # On ne scale que si l'image est plus grande que la cible
+            if img.width > width or img.height > height:
+                img.thumbnail((width, height), Image.LANCZOS)
+                print("[+] Uniformized Image shape:", img.size)
+            else:
+                print("[=] Image plus petite que la cible, non modifiée.")
+        elif new_size_ratio < 1.0:
             img = img.resize((int(img.size[0] * new_size_ratio), int(img.size[1] * new_size_ratio)), Image.LANCZOS)
-            # print new image shape
             print("[+] New Image shape:", img.size)
         elif width and height:
-            # if width and height are set, resize with them instead
             img = img.resize((width, height), Image.ANTIALIAS)
-            # print new image shape
             print("[+] New Image shape:", img.size)
         # split the filename and extension
         #filename, ext = os.path.splitext(image_name)
@@ -94,3 +95,12 @@ def compress_img(images, destination, new_size_ratio=0.9, quality=75, width=None
         saving_diff = new_image_size - image_size
         # print the saving percentage
         print(f"[+] Image size change: {saving_diff/image_size*100:.2f}% of the original image size.")
+        
+    
+    
+if __name__ == "__main__":
+    
+    IMG = collect_img('/Users/aloisgoeury/Downloads/skinclinic')
+    #print(compress_img(IMG,'/Users/aloisgoeury/Desktop/Result'))
+    print(IMG)
+ 
