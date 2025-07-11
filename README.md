@@ -128,7 +128,7 @@ Pour utiliser la conversion AVIF :
 - **tkinter** : Interface graphique (inclus avec Python)
 - **os** : Gestion des fichiers et dossiers (inclus avec Python)
 
-## Acknowledgments
+## Remerciement
 
 Un grand merci à [Alois Goeury](https://github.com/AloisGoeury) pour son aide au projet !
 
