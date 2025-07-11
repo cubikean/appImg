@@ -2,7 +2,7 @@
 
 ## Image Compressor
 
-This Python script provides a simple GUI application for compressing images in bulk. It supports converting images to different formats (JPG, WEBP, PNG) and allows users to customize compression options.
+This Python script provides a simple GUI application for compressing images in bulk. It supports converting images to different formats (JPG, WEBP, PNG, AVIF) and allows users to customize compression options.
 
 ### Usage
 
@@ -38,22 +38,11 @@ This Python script provides a simple GUI application for compressing images in b
 
 ### Dependencies
 
-This script depends on the `compress_image_v2` module, which includes functions for collecting and compressing images. Ensure that the `compress_image_v2` module is available in the same directory as the script.
+This script depends on the `util` module, which includes functions for collecting and compressing images. Ensure that the `util` module is available in the same directory as the script.
 
-### Example
+### Acknowledgments
 
-```python
-# Example usage
-from compress_image_v2 import collect_img, compress_img
+Special thanks to @AloisGoeury for his valuable help on this project!
 
-# Define image folder, result folder, and compression options
-img_folder = "/path/to/input/images"
-result_folder = "/path/to/output/images"
-jpg = True
-webp = False
-png = True
-ratio = 0.9
-quality = 75
 
-# Collect and compress images
-compress_img(images=collect_img(img_folder), destination=result_folder, new_size_ratio=ratio, quality=quality, to_jpg=jpg, to_webp=webp, to_png=png)
+
